@@ -1,0 +1,126 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>HairCut - Hair Salon HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Oswald:wght@600&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+    <script
+			  src="https://code.jquery.com/jquery-3.7.0.min.js"
+			  integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+			  crossorigin="anonymous"></script>
+		
+    <script type="text/javascript" src="{% static 'assets/js/card.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/script.js' %}"></script>
+</head>
+<body>
+{% if request.session.ut == "0" %}
+<div class="position-relative mb-4">
+    <form method="GET" action="/view_salooner">
+    <input style=" width: 200px; height: 30px; margin-top: 10px; margin-left: 76%; padding: 10px 40px 10px 15px; border: 1px solid #ccc; border-radius: 5px; outline: none;" 
+           class="form-control border-0 py-3" name="search" type="search" placeholder="Search" aria-label="Search">
+    <button style="position: absolute; top: 0; right: 0; height: 100%; padding: 8px 15px; border: none; border-radius: 0 5px 5px 0;"
+            class="btn btn-outline-primary" type="submit">Search</button>
+            </form>
+        </div>
+
+        {% endif %}
+
+<nav class="navbar navbar-expand-lg bg-secondary navbar-dark sticky-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+    <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
+        <h1 class="mb-0 text-primary text-uppercase"><i class="fa fa-cut me-3"></i>E_saloon</h1>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a href="/" class="nav-item nav-link">Home</a>
+            <a href="/about" class="nav-item nav-link">About</a>
+            <!-- <a href="/reg" class="nav-item nav-link">Registration</a> -->
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">REGISTER AS</a>
+                <div class="dropdown-menu m-0">
+                    <a href="/reg" class="dropdown-item">USER</a>
+                    <!-- <a href="/haircollector_reg" class="dropdown-item">HAIR COLLECTOR</a> -->
+                    <a href="/saloonreg" class="dropdown-item">SALOON</a>
+                    <a href="/workerreg" class="dropdown-item">FREELANCE WORKER</a>
+                    
+                </div>
+            </div>
+            <a href="/Login" class="nav-item nav-link">Login</a>
+           
+            <!-- <a href="/contact" class="nav-item nav-link">Contact</a> -->
+        </div>
+
+
+       
+    </div>
+</nav>
+
+
+
+
+        <div class="container">
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                <div class="bg-secondary p-5">
+                        <form action="" method="post" enctype="multipart/form-data">
+                            <div class="row g-3">
+                                <div class="col-md-12">
+                                    <div class="form-floating">
+                                           
+                                            <div>
+                                                <label for="uname">Username</label>
+                                                <input type="text" name="username" id="uname" class="form-control bg-transparent">
+                                            </div>
+                                            <div>
+                                                <label for="pswd">Password</label>
+                                                <input type="password" name="password" id="pswd" class="form-control bg-transparent">
+                                            </div>
+                                            
+                                            </div>
+                                            <br><br>
+                                           
+                                        <div > 
+                                            
+                                            <input type="submit"  value="Login" class="reg" style="width: 50%;color: rgb(255, 254, 254);background-color: #212529;"> 
+                                            <!-- <br><br><a href="/forgot_password">Forgot Password</a> -->
+                                            
+                                        </div>
+                                </div>
+                            </div>
+                        
+                        </form>
+
+                    </div>
+            </div>
+        </div>
+   
+</center>
+{%endblock%}
